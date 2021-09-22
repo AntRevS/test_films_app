@@ -9,5 +9,5 @@ interface RetrofitService {
 
     @GET("svc/movies/v2/reviews/all.json?api-key=${BuildConfig.API_KEY}")
     fun getReviews() : Single<FilmReviews>
-    
+
 }
