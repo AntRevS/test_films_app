@@ -1,4 +1,4 @@
-package com.reviakin_package.test_films_app.domain.usecase
+package com.reviakin_package.test_films_app.domain.usecase.base
 
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
