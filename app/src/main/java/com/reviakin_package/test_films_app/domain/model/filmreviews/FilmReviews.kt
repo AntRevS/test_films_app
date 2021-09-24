@@ -4,5 +4,6 @@ import com.google.gson.annotations.SerializedName
 import com.reviakin_package.test_films_app.domain.model.filmreviews.other.Results
 
 data class FilmReviews(
-    @SerializedName("results") var results : List<Results>
+    @SerializedName("results") var results : List<Results>,
+    @SerializedName("has_more") var hasMore: Boolean
 )
