@@ -13,7 +13,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
@@ -24,13 +23,11 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(
-        gsonConverterFactory: GsonConverterFactory,
-        rxJava2CallAdapterFactory: RxJava2CallAdapterFactory
+        gsonConverterFactory: GsonConverterFactory
     ) : Retrofit{
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(gsonConverterFactory)
-            .addCallAdapterFactory(rxJava2CallAdapterFactory)
             .build()
     }
 
@@ -44,12 +41,6 @@ class NetworkModule {
     @Singleton
     fun provideGsonConverterFactory() : GsonConverterFactory{
         return GsonConverterFactory.create()
-    }
-
-    @Provides
-    @Singleton
-    fun provideRxJavaCallAdapterFactory() : RxJava2CallAdapterFactory{
-        return RxJava2CallAdapterFactory.create()
     }
 
     @Provides
